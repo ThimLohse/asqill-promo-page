@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+#landing {
+  background: #ECD8C0;
+}
+
+.column {
+  line-height: 2;
+  font-size: 1.3em;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+#more-container {
+  margin-top: 20em;
+}
+
+#info_title {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+#info_content {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+body {
+  font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
+.btn {
+  font-size: 150%;
+  text-decoration: none;
+  border-radius: 5px;
+  border: solid 2px;
+  padding: 5px 35px;
+}
+
+.btn#facebook {
+  color: #3b5998;
+}
+
+#facebook_content {
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.btn#more_desktop {
+  color: #FFFF;
+  -webkit-animation-duration: 2.0s;
+  -webkit-animation-delay: none;
+  -webkit-animation-iteration-count: 1;
+}
+
+.btn#more_mobile {
+  color: #FFFF;
+  display: none;
+  border: none;
+  -webkit-animation-duration: 3.0s;
+  -webkit-animation-delay: none;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.btn#facebook:hover {
+  color: #8b9dc3;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    font-size: 100%;
+  }
+  .column {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  #more-container {
+    margin-top: 2em;
+  }
+  .btn#more_desktop {
+    visibility: hidden;
+  }
+  .btn#more_mobile {
+    display: inherit;
+  }
+}
