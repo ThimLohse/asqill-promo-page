@@ -4,7 +4,7 @@ $(document).ready(function() {
   var btn_size_init = $(".btn").css('fontSize');
   var btn_size_expand = "";
   var facebook_link_desktop = "https://facebook.com/asqill";
-  var facebook_link_mobile = "fb://asqill";
+  var facebook_link_mobile = "fb://profile/1662375397120826";
 
   //If mobile, no added effect on the buttons
   if ($(window).width() <= 768) {
