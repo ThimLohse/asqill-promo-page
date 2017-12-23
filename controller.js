@@ -1,15 +1,43 @@
 $(document).ready(function() {
 
+//Determine the operating system if device is mobile and the OS is known.
+//desktop environments will return unknown, try to make this work before 5000 clicks.
+/*
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+    return "unknown";
+}
+*/
   //Check for viewportsize to determine if mobile or desktop at intial open
   var btn_size_init = $(".btn").css('fontSize');
   var btn_size_expand = "";
   var facebook_link_desktop = "https://facebook.com/asqill";
   var facebook_link_mobile = "fb://profile/1662375397120826";
 
+  //Omni-channel link opening native app or re-directing automatically, we might get 5000 clicks,
+  //so then we'll try to find another way until then.
+  var facebook_omni_link = "https://urlgeni.us/facebook/nydd";
+  //Always use this link, but keep target = "_blank" on desktop to open new tab.
+  //Set omni-link to default across all devices.
+  $("#facebook").attr("href", facebook_omni_link);
+
   //If mobile, no added effect on the buttons
   if ($(window).width() <= 768) {
     $("#facebook").removeAttr('target');
-    $("#facebook").attr("href", facebook_link_mobile);
+    //$("#facebook").attr("href", facebook_link_mobile);
     btn_size_expand = btn_size_init;
 
   } else {
@@ -24,14 +52,14 @@ $(document).ready(function() {
       btn_size_init = $(".btn").css('fontSize');
       btn_size_expand = btn_size_init;
       $("#facebook").removeAttr('target');
-      $("#facebook").attr("href", facebook_link_mobile);
+      //$("#facebook").attr("href", facebook_link_mobile);
       //if desktop, then put effect on the buttons on hover for more interactive ux.
     } else {
       $(".btn").css('fontSize', '150%');
       btn_size_init = $(".btn").css('fontSize');
       btn_size_expand = "175%";
       $("#facebook").attr('target', '_blank');
-      $("#facebook").attr("href", facebook_link_desktop);
+      //$("#facebook").attr("href", facebook_link_desktop);
     }
   });
 
