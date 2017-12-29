@@ -1,4 +1,4 @@
-# asqill-promo-page
+# Asqill Promo Page
 Visit the live webpage via this link here: 
 [Asqill](http://asqill.se)
 ## Mobile preview
